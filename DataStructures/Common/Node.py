@@ -1,25 +1,24 @@
+class Node(object):
 
-class Node(object) :
-
-    def __init__(self, data = None, next = None, prev = None):
+    def __init__(self, data=None, next_node: 'Node' = None, prev_node: 'Node' = None):
         self.data = data
-        self.next = next
-        self.prev = prev
+        self.next = next_node
+        self.prev = prev_node
 
-    def getData(self):
+    def get_data(self):
         return self.data
 
-    def setData(self, data):
+    def set_data(self, data):
         self.data = data
 
-    def setNext(self,next) :
+    def set_next(self, next: 'Node'):
         self.next = next
 
-    def getNext(self):
+    def get_next(self) -> 'Node':
         return self.next
 
-    def getPrev(self):
+    def get_prev(self) -> 'Node':
         return self.prev
 
-    def setPrev(self, prev):
+    def set_prev(self, prev: 'Node'):
         self.prev = prev

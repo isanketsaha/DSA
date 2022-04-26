@@ -1,6 +1,7 @@
 from Common.Node import Node
 
 
+
 class SingleLinkedList:
 
     def __init__(self):
@@ -8,13 +9,13 @@ class SingleLinkedList:
 
     def insert_at_begin(self, value):
         newNode = Node(value)
-        newNode.setNext(self.root)
+        newNode.set_next(self.root)
         self.root = newNode
 
     def insert_at_end(self, value):
         node = self.traverse(-1)
         if node is not None and node.next is not None:
-            node.next.setNext(Node(value))
+            node.next.set_next(Node(value))
         else:
             self.insert_at_begin(value)
 
@@ -26,15 +27,15 @@ class SingleLinkedList:
             if node is not None and node.next is not None and node.next.next is not None:
                 next_node = node.next
                 new_node = Node(value)
-                node.setNext(new_node)
-                new_node.setNext(next_node)
+                node.set_next(new_node)
+                new_node.set_next(next_node)
             else:
                 self.insert_at_end(value)
 
     def delete_at_end(self):
         node = self.traverse(-1)
         if node is not None:
-            node.setNext(None)
+            node.set_next(None)
         else:
             print('List is Empty to perform delete operation')
 
@@ -47,9 +48,9 @@ class SingleLinkedList:
     def delete_at_index(self,index):
         node = self.traverse(index)
         if node is not None and node.next is not None :
-            node.setNext(node.getNext().getNext())
+            node.set_next(node.get_next().get_next())
         else:
-            node.setNext(None)
+            node.set_next(None)
 
     def traverse(self, index):
         root = self.root
