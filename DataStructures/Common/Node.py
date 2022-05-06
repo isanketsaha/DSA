@@ -1,6 +1,9 @@
+from typing import Optional
+
+
 class Node(object):
 
-    def __init__(self, data=None, next_node: 'Node' = None, prev_node: 'Node' = None):
+    def __init__(self, data=None, next_node: Optional['Node'] = None, prev_node: Optional['Node'] = None):
         self.data = data
         self.next = next_node
         self.prev = prev_node
@@ -22,3 +25,4 @@ class Node(object):
 
     def set_prev(self, prev: 'Node'):
         self.prev = prev
+

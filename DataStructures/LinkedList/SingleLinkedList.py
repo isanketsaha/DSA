@@ -1,4 +1,4 @@
-from Common.Node import Node
+from DataStructures.Common.Node import Node
 
 
 
@@ -7,6 +7,9 @@ class SingleLinkedList:
     def __init__(self):
         self.root: Node = None
 
+    def get_root(self):
+        return self.root
+
     def insert_at_begin(self, value):
         newNode = Node(value)
         newNode.set_next(self.root)
@@ -14,8 +17,8 @@ class SingleLinkedList:
 
     def insert_at_end(self, value):
         node = self.traverse(-1)
-        if node is not None and node.next is not None:
-            node.next.set_next(Node(value))
+        if node is not None:
+            node.set_next(Node(value))
         else:
             self.insert_at_begin(value)
 
@@ -83,13 +86,3 @@ class SingleLinkedList:
             root = root.next
         print(f'The Length of the linkedList is {length}')
 
-
-sll = SingleLinkedList()
-sll.insert_at_end(5)
-sll.insert_at_begin(12)
-sll.insert_at_begin(10)
-sll.insert_at_end(20)
-sll.delete_at_index(2)
-sll.insert_at_index(11, 5)
-print(sll)
-sll.length()
