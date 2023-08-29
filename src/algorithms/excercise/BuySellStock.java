@@ -8,7 +8,6 @@ public class BuySellStock {
         for (int i : prices) {
             if (low > i)
                 low = i;
-
             if (low <= i)
                 high = i;
 

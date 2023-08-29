@@ -70,9 +70,7 @@ public class SLinkedList<T> {
         }
         return value.toString();
     }
-}
 
-class main {
     public static void main(String[] args) {
         SLinkedList<String> ll = new SLinkedList<>();
 
